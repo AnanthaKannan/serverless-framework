@@ -1,0 +1,11 @@
+  {
+    "$schema" : "http://json-schema.org/draft-04/schema#",
+    "title" : "CompareData",
+    "type" : "object",
+    "properties" : {
+      "OrgID": { "type" : "string" },
+      "salary": { "type" : "integer" },
+      "name": { "type": "string"}
+    },
+    "required": ["OrgID", "salary", "name"]
+  }

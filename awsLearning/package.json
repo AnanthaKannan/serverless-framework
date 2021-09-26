@@ -1,0 +1,37 @@
+{
+  "name": "serverlessProject",
+  "version": "1.0.0",
+  "description": "serverless config credentials --provider aws --key XXXXXXXXXXXXXXX --secret XXXXXXXXXXXXXXX --profile serverlessUser",
+  "main": "handler.js",
+  "dependencies": {
+    "aws-sdk": "^2.962.0",
+    "dotenv": "^10.0.0",
+    "serverless": "^2.53.0",
+    "serverless-dynamodb-local": "^0.2.40",
+    "serverless-offline": "^8.0.0",
+    "serverless-s3-sync": "^1.17.1",
+    "serverless-webpack": "^5.5.1",
+    "uuid": "^8.3.2",
+    "webpack": "^5.48.0",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "@shelf/jest-dynamodb": "^1.8.1",
+    "eslint": "^7.32.0",
+    "jest": "^27.0.6"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnanthaKannan/aws-serverless-frameword.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnanthaKannan/aws-serverless-frameword/issues"
+  },
+  "homepage": "https://github.com/AnanthaKannan/aws-serverless-frameword#readme"
+}
