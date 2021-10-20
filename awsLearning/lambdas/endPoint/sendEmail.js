@@ -21,7 +21,7 @@ exports.handler = async event => {
 	};
     try{
     await SES.sendEmail(params).promise();
-    return response._200({})
+    return response._200()
     }
     catch(e){
         return response._400({e})
