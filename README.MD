@@ -27,9 +27,6 @@ need to install below mention npm
 ## Run the server in offline
     sls offline start --location .
 
-# DynamoDb docs
-https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html#getItem-property
-
 
 ### need to know
 1. cron job
@@ -38,3 +35,13 @@ https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html#getItem-pr
 
 
 ## Bucket policies
+
+
+
+
+
+serverless config credentials --provider aws --key AKIAWG33LDPZKQI63GFM --secret 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 --profile serverlessUser
+
+
+set AWS_ACCESS_KEY_ID=AKIAWG33LDPZKQI63GFM
+set AWS_SECRET_ACCESS_KEY=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

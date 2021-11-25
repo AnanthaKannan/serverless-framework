@@ -54,11 +54,11 @@ functions:
      - http:
          path: get-user/{ID}
          method: GET
-  getOrg:
-    handler: lambdas/endPoint/getOrg.handler
+  listVersion:
+    handler: lambdas/endPoint/listVersion.handler
     events:
      - http:
-         path: get-org/{orgId}
+         path: get-org
          method: GET
   getProjectByOrgId:
     handler: lambdas/endPoint/getProjectByOrgId.handler
