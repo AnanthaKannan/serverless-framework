@@ -8,7 +8,8 @@ exports.handler = async event => {
 
 	const data = JSON.parse(event.body);
 	data.PK = `ORG#${data.orgId}`;
-	data.SK = `EMP#${v4()}`;
+	const id_ = v4();
+	data.SK = `EMP#${id_}`;
 
     const sendData = {
         PK: data.PK,
@@ -27,5 +28,5 @@ exports.handler = async event => {
 		return response._400({message: `Failed to write user by ID ${data.ID} in the Table ${tableName}`})
 	}
 
-	return response._200(newUser);
+	return response._200({id: id_});
 }

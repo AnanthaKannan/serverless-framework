@@ -2,7 +2,10 @@
 serverless config credentials --provider aws --key XXXXXXXXXXX --secret XXXXXXXXX --profile serverlessUser
 
 ## To create a project
+### node js
 serverless create --template aws-nodejs --path serverlessProject
+### Type script
+sls create --template aws-nodejs-typescript --path aws-ts-api
 
 ## It will deploy the file
 sls deploy
@@ -34,14 +37,3 @@ need to install below mention npm
 3. lambda layer understand
 
 
-## Bucket policies
-
-
-
-
-
-serverless config credentials --provider aws --key AKIAWG33LDPZKQI63GFM --secret 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 --profile serverlessUser
-
-
-set AWS_ACCESS_KEY_ID=AKIAWG33LDPZKQI63GFM
-set AWS_SECRET_ACCESS_KEY=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

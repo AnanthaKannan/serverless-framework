@@ -1,22 +1,24 @@
 const response = require('../utility/API_Responses');
-const Dynamo = require('../utility/dynamo')
-const tableName = process.env.tableName;
+const Dynamo = require('../utility/dynamo');
 
 exports.handler = async event => {
-    if (!event.pathParameters || !event.pathParameters.ID) {
-        return Response._400({message: 'missing path'})
+    console.log('init')
+    const SK = `EMP#${event.pathParameters.ID}`;
+    const params = {
+        TableName: process.env.tableName,
+        KeyConditionExpression: 'SK = :SK and PK = :PK',
+        // ExpressionAttributeNames: {'#PK': 'PK', '#SK': 'SK'},
+        ExpressionAttributeValues: {
+            ':SK': SK,
+            ':PK': "ORG#ff87e3e2-0792-49dd-b892-882f6f1bddbc"
+        }
     }
-
-    const key = {ID: event.pathParameters.ID };
-    const user = await Dynamo.get(key, tableName)
+    console.log('params', params)
+    const user = await Dynamo.query(params)
                 .catch(err => {
                     console.log('err', err)
                     return null;
                 });
     
-    if(!user){
-        return response._400({message: `Failed to get user by ID ${key.ID} in the Table ${tableName}`})
-    }
-
     return response._200(user);
 }

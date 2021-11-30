@@ -19,6 +19,7 @@ const get = async (Key, TableName) => {
 		TableName,
 		Key
 	};
+	console.log('params', params)
 	const data = await documentClient
 		.get(params)
 		.promise();
