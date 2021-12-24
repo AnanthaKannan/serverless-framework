@@ -54,119 +54,110 @@ functions:
      - http:
          path: get-user/{ID}
          method: GET
-  listVersion:
-    handler: lambdas/endPoint/listVersion.handler
-    events:
-     - http:
-         path: get-org
-         method: GET
-  getProjectByOrgId:
-    handler: lambdas/endPoint/getProjectByOrgId.handler
-    events:
-     - http:
-         path: get-project-orgId/{orgId}
-         method: GET
-  getAllUser:
-    handler: lambdas/endPoint/getAllUser.handler
-    events:
-      - http:
-          path: get-all-user
-          method: GET
-          # cors: true
-          # private: true   # it is for API-KEY
-  getPlayerScore:
-    handler: lambdas/endPoint/getPlayerScore.handler
-    events:
-      - http:
-          path: get-player-score/{ID}
-          method: GET
-  createPlayerScore:
-    handler: lambdas/endPoint/createPlayerScore.handler
-    events:
-      - http:
-          path: create-player/{ID}
-          method: POST
-  createWebhook:
-    handler: lambdas/endPoint/createWebhook.handler
-    events:
-      - http:
-          path: create-webhook
-          method: POST
-  createOrg:
-    handler: lambdas/endPoint/createOrg.handler
-    events:
-      - http:
-          path: create-org
-          method: POST
-  createLinkData:
-    handler: lambdas/endPoint/createLinkData.handler
-    events:
-      - http:
-          path: create-link-data
-          method: POST
-  createEmp:
-    handler: lambdas/endPoint/createEmp.handler
-    events:
-      - http:
-          path: create-emp
-          method: POST
-          # request:
-            # schemas:
-            #   application/json:
-            #     schema: ${file(./lambdas/request_model/create_request.json)}
-            #     name: PostCreateModel
-            #     description: 'Validation model for Creating Posts'
-  getEmployee:
-    handler: lambdas/endPoint/getEmployee.handler
-    events:
-     - http:
-         path: get-employee/{ID}
-         method: GET
-  updateEmp:
-    handler: lambdas/endPoint/updateEmp.handler
-    events:
-     - http:
-         path: update-employee/{ID}
-         method: PUT
-  deleteEmp:
-    handler: lambdas/endPoint/deleteEmp.handler
-    events:
-     - http:
-         path: delete-employee/{ID}
-         method: DELETE
-  queryEmp:
-    handler: lambdas/endPoint/queryEmp.handler
-    events:
-     - http:
-         path: query-employee
-         method: GET
-  createFile:
-    handler: lambdas/endPoint/createFile.handler
-    events:
-      - http:
-          path: create-file/{fileName}
-          method: POST
-  createProject:
-    handler: lambdas/endPoint/createProject.handler
-    events:
-      - http:
-          path: create-Project
-          method: POST
-  sendEmail:
-    handler: lambdas/endPoint/sendEmail.handler
-    events:
-      - http:
-          path: send-email
-          method: POST
-  layerTest:
-    handler: lambdas/endPoint/layerTest.handler
-    # layers:
-    #   - arn:aws:lambda:us-east-1:427071052786:layer:logging:1
-    events:
-      - http:
-          path: layer-test
-          method: GET
-
+  # listVersion:
+  #   handler: lambdas/endPoint/listVersion.handler
+  #   events:
+  #    - http:
+  #        path: get-org
+  #        method: GET
+  # getProjectByOrgId:
+  #   handler: lambdas/endPoint/getProjectByOrgId.handler
+  #   events:
+  #    - http:
+  #        path: get-project-orgId/{orgId}
+  #        method: GET
+  # getAllUser:
+  #   handler: lambdas/endPoint/getAllUser.handler
+  #   events:
+  #     - http:
+  #         path: get-all-user
+  #         method: GET
+  #         cors: true
+  #         private: true   # it is for API-KEY
+  # getPlayerScore:
+  #   handler: lambdas/endPoint/getPlayerScore.handler
+  #   events:
+  #     - http:
+  #         path: get-player-score/{ID}
+  #         method: GET
+  # createPlayerScore:
+  #   handler: lambdas/endPoint/createPlayerScore.handler
+  #   events:
+  #     - http:
+  #         path: create-player/{ID}
+  #         method: POST
+  # createWebhook:
+  #   handler: lambdas/endPoint/createWebhook.handler
+  #   events:
+  #     - http:
+  #         path: create-webhook
+  #         method: POST
+  # createOrg:
+  #   handler: lambdas/endPoint/createOrg.handler
+  #   events:
+  #     - http:
+  #         path: create-org
+  #         method: POST
+  # createLinkData:
+  #   handler: lambdas/endPoint/createLinkData.handler
+  #   events:
+  #     - http:
+  #         path: create-link-data
+  #         method: POST
+  # createEmp:
+  #   handler: lambdas/endPoint/createEmp.handler
+  #   events:
+  #     - http:
+  #         path: create-emp
+  #         method: POST
+  #         request:
+  #           schemas:
+  #             application/json:
+  #               schema: ${file(./lambdas/request_model/create_request.json)}
+  #               name: PostCreateModel
+  #               description: 'Validation model for Creating Posts'
+  # getEmployee:
+  #   handler: lambdas/endPoint/getEmployee.handler
+  #   events:
+  #    - http:
+  #        path: get-employee/{ID}
+  #        method: GET
+  # updateEmp:
+  #   handler: lambdas/endPoint/updateEmp.handler
+  #   events:
+  #    - http:
+  #        path: update-employee/{ID}
+  #        method: PUT
+  # deleteEmp:
+  #   handler: lambdas/endPoint/deleteEmp.handler
+  #   events:
+  #    - http:
+  #        path: delete-employee/{ID}
+  #        method: DELETE
+  # queryEmp:
+  #   handler: lambdas/endPoint/queryEmp.handler
+  #   events:
+  #    - http:
+  #        path: query-employee
+  #        method: GET
+  # createFile:
+  #   handler: lambdas/endPoint/createFile.handler
+  #   events:
+  #     - http:
+  #         path: create-file/{fileName}
+  #         method: POST
+  # createProject:
+  #   handler: lambdas/endPoint/createProject.handler
+  #   events:
+  #     - http:
+  #         path: create-Project
+  #         method: POST
+  # sendEmail:
+  #   handler: lambdas/endPoint/sendEmail.handler
+  #   events:
+  #     - http:
+  #         path: send-email
+  #         method: POST
 
 resources:
   Resources:
@@ -187,22 +178,22 @@ resources:
     # DemoBucketUpload:
     #   Type: AWS::S3::Bucket
     #   Properties:
-    #     BucketName: ${self:custom.bucketName}
+    #     BucketName: testbuketsreekannan-2
 
-    # CognitoUserPool:
-    #   Type: AWS::Cognito::UserPool
-    #   Properties:
-    #     UserPoolName: ${self:provider.stage}-user-pool
-    #     UsernameAttributes:
-    #       - email
-    #     AutoVerifiedAttributes:
-    #       - email
-    # CognitoUserPoolClient:
-    #   Type: AWS::Cognito::UserPoolClient
-    #   Properties:
-    #     ClientName: ${self:provider.stage}-user-pool-client
-    #     UserPoolId:
-    #       Ref: CognitoUserPool
-    #     ExplicitAuthFlows:
-    #       - ADMIN_NO_SRP_AUTH
-    #     GenerateSecret: false
+    CognitoUserPool:
+      Type: AWS::Cognito::UserPool
+      Properties:
+        UserPoolName: ${self:provider.stage}-user-pool
+        UsernameAttributes:
+          - email
+        AutoVerifiedAttributes:
+          - email
+    CognitoUserPoolClient:
+      Type: AWS::Cognito::UserPoolClient
+      Properties:
+        ClientName: ${self:provider.stage}-user-pool-client
+        UserPoolId:
+          Ref: CognitoUserPool
+        ExplicitAuthFlows:
+          - ADMIN_NO_SRP_AUTH
+        GenerateSecret: false
