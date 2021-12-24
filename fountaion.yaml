@@ -19,28 +19,28 @@ Resources:
                   - !Ref AWS::Region
       AccessControl: Private
 
-  MySNSTopic:
-    Type: AWS::SNS::Topic
-    Properties:
-      # Subscription:
-      #   - Endpoint:
-      #       Fn::GetAtt:
-      #         - "MySubscription"
-      #         - "Arn"
-      #     Protocol: "email"
-        # - Endpoint:
-        #     Fn::GetAtt:
-        #       - "MyQueue2"
-        #       - "Arn"
-        #   Protocol: "sqs"
-      TopicName: "SampleTopic"
+  # MySNSTopic:
+  #   Type: AWS::SNS::Topic
+  #   Properties:
+  #     # Subscription:
+  #     #   - Endpoint:
+  #     #       Fn::GetAtt:
+  #     #         - "MySubscription"
+  #     #         - "Arn"
+  #     #     Protocol: "email"
+  #       # - Endpoint:
+  #       #     Fn::GetAtt:
+  #       #       - "MyQueue2"
+  #       #       - "Arn"
+  #       #   Protocol: "sqs"
+  #     TopicName: "SampleTopic"
 
   MySubscription:
     Type: AWS::SNS::Subscription
     Properties:
       Endpoint: sreeananthakannan@gmail.com
       Protocol: email
-      TopicArn: !Ref 'MySNSTopic'
+      # TopicArn: !Ref 'MySNSTopic'
 
 
 Outputs:
