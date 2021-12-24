@@ -7,7 +7,8 @@ Parameters:
 Resources:
   cldFormationTempBucket:
     Type: 'AWS::S3::Bucket'
-    BucketName:
+    Properties:
+      BucketName:
           Fn::Join:
                 - ""
                 - - "cloud-formation-temp-bucket"
@@ -16,7 +17,6 @@ Resources:
                   - !Ref AWS::AccountId
                   - "-"
                   - !Ref AWS::Region
-    Properties:
       AccessControl: Private
 
 
