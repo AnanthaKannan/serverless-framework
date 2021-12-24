@@ -80,13 +80,13 @@ Outputs:
     Export:
       Name: MySNSTopicARN
 
-  # CognitoUserPoolARN:
-  #   Value: !GetAtt
-  #           - CognitoUserPool
-  #           - Arn
-  #   Description: The CognitoUserPool created
-  #   Export:
-  #     Name: CognitoUserPoolARN
+  CognitoUserPoolARN:
+    Value: !GetAtt
+            - CognitoUserPool
+            - Arn
+    Description: The CognitoUserPool created
+    Export:
+      Name: CognitoUserPoolARN
     
   # CognitoUserPoolClientARN:
   #   Value: !GetAtt
