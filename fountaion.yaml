@@ -19,28 +19,17 @@ Resources:
                   - !Ref AWS::Region
       AccessControl: Private
 
-  # MySNSTopic:
-  #   Type: AWS::SNS::Topic
-  #   Properties:
-  #     # Subscription:
-  #     #   - Endpoint:
-  #     #       Fn::GetAtt:
-  #     #         - "MySubscription"
-  #     #         - "Arn"
-  #     #     Protocol: "email"
-  #       # - Endpoint:
-  #       #     Fn::GetAtt:
-  #       #       - "MyQueue2"
-  #       #       - "Arn"
-  #       #   Protocol: "sqs"
-  #     TopicName: "SampleTopic"
-
-  MySubscription:
-    Type: AWS::SNS::Subscription
+  MySNSTopic:
+    Type: AWS::SNS::Topic
     Properties:
-      Endpoint: sreeananthakannan@gmail.com
-      Protocol: email
-      # TopicArn: !Ref 'MySNSTopic'
+      TopicName: "SampleTopic"
+
+  # MySubscription:
+  #   Type: AWS::SNS::Subscription
+  #   Properties:
+  #     Endpoint: sreeananthakannan@gmail.com
+  #     Protocol: email
+  #     TopicArn: !Ref 'MySNSTopic'
 
 
 Outputs:
@@ -51,3 +40,11 @@ Outputs:
     Description: The temp bucket created using cloudformation script
     Export:
       Name: cldFormationTempBucketARN
+
+  MySNSTopicARN:
+    Value: !GetAtt
+            - MySNSTopic
+            - Arn
+    Description: The SNS created
+    Export:
+      Name: MySNSTopicARN
