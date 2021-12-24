@@ -41,10 +41,10 @@ Outputs:
     Export:
       Name: cldFormationTempBucketARN
 
-  MySNSTopicARN:
-    Value: !GetAtt
-            - MySNSTopic
-            - Arn
-    Description: The SNS created
-    Export:
-      Name: MySNSTopicARN
+  # MySNSTopicARN:
+  #   Value: !GetAtt
+  #           - MySNSTopic
+  #           - Arn
+  #   Description: The SNS created
+  #   Export:
+  #     Name: MySNSTopicARN
