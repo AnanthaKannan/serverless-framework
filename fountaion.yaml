@@ -31,6 +31,33 @@ Resources:
       Protocol: email
       TopicArn: !Ref 'MySNSTopic'
 
+  CognitoUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName:
+        Fn::Join:
+                - ""
+                - - "user-pool"
+                  - !Ref Stage
+      UsernameAttributes:
+        - email
+      AutoVerifiedAttributes:
+        - email
+
+  CognitoUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName:
+        Fn::Join:
+                - ""
+                - - "user-pool-client"
+                  - !Ref Stage
+      UserPoolId:
+        Ref: CognitoUserPool
+      ExplicitAuthFlows:
+        - ADMIN_NO_SRP_AUTH
+      GenerateSecret: false
+
 
 Outputs:
   cldFormationTempBucketARN:
