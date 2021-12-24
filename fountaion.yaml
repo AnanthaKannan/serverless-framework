@@ -46,3 +46,9 @@ Outputs:
     Description: The SNS created
     Export:
       Name: MySubscriptionARN
+
+  MySNSTopicARN:
+    Value: !Ref MySNSTopic
+    Description: The SNS created
+    Export:
+      Name: MySNSTopicARN
