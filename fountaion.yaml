@@ -35,12 +35,12 @@ Resources:
         #   Protocol: "sqs"
       TopicName: "SampleTopic"
 
-  MySubscription:
-    Type: AWS::SNS::Subscription
-    Properties:
-      Endpoint: sreeananthakannan@gmail.com
-      Protocol: email
-      TopicArn: !Ref 'MySNSTopic'
+  # MySubscription:
+  #   Type: AWS::SNS::Subscription
+  #   Properties:
+  #     Endpoint: sreeananthakannan@gmail.com
+  #     Protocol: email
+  #     TopicArn: !Ref 'MySNSTopic'
 
 
 Outputs:
