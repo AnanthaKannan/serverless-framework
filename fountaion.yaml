@@ -37,7 +37,7 @@ Resources:
       UserPoolName:
         Fn::Join:
                 - ""
-                - - "user-pool-"
+                - - "user-pool"
                   - !Ref Stage
       UsernameAttributes:
         - email
@@ -50,7 +50,7 @@ Resources:
       ClientName:
         Fn::Join:
                 - ""
-                - - "user-pool-client-"
+                - - "user-pool-client"
                   - !Ref Stage
       UserPoolId:
         Ref: CognitoUserPool
