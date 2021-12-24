@@ -8,7 +8,7 @@ Resources:
   cldFormationTempBucket:
     Type: 'AWS::S3::Bucket'
     BucketName:
-          Fn:Join:
+          Fn::Join:
                 - ""
                 - - "cloud-formation-temp-bucket"
                   - !Ref Stage
