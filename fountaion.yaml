@@ -1,10 +1,30 @@
 AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  Stage:
+    Type: String
+
 Resources:
-  S3Bucket:
+  cldFormationTempBucket:
     Type: 'AWS::S3::Bucket'
+    BucketName:
+          Fn:Join:
+                - ""
+                - - "cloud-formation-temp-bucket"
+                  - !Ref Stage
+                  - "-"
+                  - !Ref AWS::AccountId
+                  - "-"
+                  - !Ref AWS::Region
     Properties:
-      AccessControl: PublicRead
+      AccessControl: Private
+
+
 Outputs:
-  BucketName:
-    Value: !Ref S3Bucket
-    Description: Name of the sample Amazon S3 bucket with CORS enabled.
+  cldFormationTempBucketARN:
+    Value: !GetAtt
+            - cldFormationTempBucket
+            - Arn
+    Description: The temp bucket created using cloudformation script
+    Export:
+      Name: cldFormationTempBucketARN
