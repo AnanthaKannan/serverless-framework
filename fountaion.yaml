@@ -79,3 +79,15 @@ Outputs:
     Description: The SNS created
     Export:
       Name: MySNSTopicARN
+
+  CognitoUserPoolARN:
+    Value: !Ref CognitoUserPool
+    Description: The SNS created
+    Export:
+      Name: CognitoUserPoolARN
+    
+  CognitoUserPoolClientARN:
+    Value: !Ref CognitoUserPoolClient
+    Description: The SNS created
+    Export:
+      Name: CognitoUserPoolClientARN
