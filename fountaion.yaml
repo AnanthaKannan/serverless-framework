@@ -87,3 +87,10 @@ Outputs:
     Description: The CognitoUserPool created
     Export:
       Name: CognitoUserPoolARN
+  CognitoUserPoolClientARN:
+    Value: !GetAtt
+            - CognitoUserPoolClient
+            - Arn
+    Description: The Cognito user pool client created
+    Export:
+      Name: CognitoUserPoolClientARN
