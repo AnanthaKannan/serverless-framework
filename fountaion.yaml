@@ -24,6 +24,20 @@ Resources:
     Properties:
       TopicName: "SampleTopic"
 
+  MySNSTopicPolicy:
+    Type: AWS::SNS::TopicPolicy
+    Properties:
+      Topics:
+        - !Ref MySNSTopic
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: '*'
+            Action: sns:Publish
+            Resource: !Ref MySNSTopic
+
   MySubscription:
     Type: AWS::SNS::Subscription
     Properties:
