@@ -23,7 +23,7 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
         AccessControl: Private
-        BucketName: private-bucket
+        BucketName: private-bucket-xsinsssymss1211
         Tags:
             - Key: description
               Value: "Private files"
