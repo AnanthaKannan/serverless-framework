@@ -46,29 +46,29 @@ Resources:
             Action: 's3:GetObject'
             Resource: arn:aws:s3:::private-bucket-xsinsssymss1211/*
   
-  # publicDistribution:
-    # Type: AWS::CloudFront::Distribution
-    # Properties:
-    #   DistributionConfig:
-    #     Origins:
-    #       - DomainName: private-bucket.s3.us-east-2.amazonaws.com
-    #         Id: S3-private-bucket
-    #         S3OriginConfig:
-    #           OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOriginIdentity}'
-    #     Enabled: 'true'
-    #     Comment: Some comment
-    #     DefaultCacheBehavior:
-    #       AllowedMethods:
-    #         - GET
-    #         - HEAD
-    #       TargetOriginId: S3-private-bucket
-    #       ForwardedValues:
-    #         QueryString: 'false'
-    #         Cookies:
-    #           Forward: none
-    #       ViewerProtocolPolicy: redirect-to-https
-    #     ViewerCertificate:
-    #       CloudFrontDefaultCertificate: 'true'
+  publicDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+          - DomainName: private-bucket-xsinsssymss1211.s3.us-east-2.amazonaws.com
+            Id: S3-private-bucket-xsinsssymss1211
+            S3OriginConfig:
+              OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOriginIdentity}'
+        Enabled: 'true'
+        Comment: Some comment
+        DefaultCacheBehavior:
+          AllowedMethods:
+            - GET
+            - HEAD
+          TargetOriginId: S3-private-bucket-xsinsssymss1211
+          ForwardedValues:
+            QueryString: 'false'
+            Cookies:
+              Forward: none
+          ViewerProtocolPolicy: redirect-to-https
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: 'true'
 
   MySNSTopic:
     Type: AWS::SNS::Topic
