@@ -27,11 +27,11 @@ Resources:
         Tags:
             - Key: description
               Value: "Private files"
-  # CloudFrontOriginIdentity:
-  #   Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
-  #   Properties:
-  #     CloudFrontOriginAccessIdentityConfig:
-  #       Comment: 'origin identity'
+  CloudFrontOriginIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: 'origin identity'
   
   # BucketPolicy:
   #   Type: AWS::S3::BucketPolicy
