@@ -20,13 +20,13 @@ Resources:
       AccessControl: Private
 
   Bucket:
-        Type: AWS::S3::Bucket
-        Properties:
-            AccessControl: Private
-            BucketName: private-bucket
-            Tags:
-                - Key: description
-                  Value: "Private files"
+    Type: AWS::S3::Bucket
+    Properties:
+        AccessControl: Private
+        BucketName: private-bucket
+        Tags:
+            - Key: description
+              Value: "Private files"
   # CloudFrontOriginIdentity:
   #   Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
   #   Properties:
