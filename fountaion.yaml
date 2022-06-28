@@ -33,18 +33,18 @@ Resources:
       CloudFrontOriginAccessIdentityConfig:
         Comment: 'origin identity'
   
-  # BucketPolicy:
-  #   Type: AWS::S3::BucketPolicy
-  #   Properties:
-  #     Bucket: private-bucket
-  #     PolicyDocument:
-  #       Version: '2012-10-17'
-  #       Statement:
-  #         - Effect: Allow
-  #           Principal:
-  #             AWS: !Sub 'arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${CloudFrontOriginIdentity}'
-  #           Action: 's3:GetObject'
-  #           Resource: arn:aws:s3:::private-bucket/*
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: private-bucket-xsinsssymss1211
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${CloudFrontOriginIdentity}'
+            Action: 's3:GetObject'
+            Resource: arn:aws:s3:::private-bucket-xsinsssymss1211/*
   
   # publicDistribution:
     # Type: AWS::CloudFront::Distribution
